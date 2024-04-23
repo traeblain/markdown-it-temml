@@ -34,5 +34,5 @@ Inline math inside heading
 .
 # The $N$-eigenvalue problem and two applications
 .
-<h1>The <span class="temml"><math><mi>N</mi></math></span>-eigenvalue problem and two applications</h1>
+<h1>The <math><mi>N</mi></math>-eigenvalue problem and two applications</h1>
 .
