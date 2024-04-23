@@ -1,14 +1,12 @@
-# markdown-it-katex
+# markdown-it-temml
 
 Add Math to your Markdown
 
-[![Build Status](https://travis-ci.org/iktakahiro/markdown-it-katex.svg?branch=master)](https://travis-ci.org/iktakahiro/markdown-it-katex)
+[![Build Status](https://travis-ci.org/traeblain/markdown-it-temml.svg?branch=master)](https://travis-ci.org/traeblain/markdown-it-temml)
 
-[KaTeX](https://github.com/Khan/KaTeX) is a faster alternative to MathJax. This plugin makes it easy to support in your markdown.
+[Temml](https://temml.org/) is as fast as [KaTeX](https://github.com/Khan/KaTeX) and an alternative to MathJax. This plugin makes it easy to support in your markdown.
 
-Need convincing?
-
-* Check out the comparative benchmark: [KaTeX vs MathJax](https://jsperf.com/katex-vs-mathjax/42)
+Temml works in browsers that support [MathML markup](https://caniuse.com/mathml).  This includes Chrome, Edge, Firefox, and Safari; but not Internet Explorer.
 
 ## Usage
 
@@ -21,25 +19,25 @@ npm install markdown-it
 Install the plugin
 
 ```bash
-npm install @iktakahiro/markdown-it-katex
+npm install @traeblain/markdown-it-temml
 ```
 
 Use it in your javascript
 
 ```javascript
 var md = require('markdown-it')(),
-    mk = require('@iktakahiro/markdown-it-katex');
+    temml = require('@traeblain/markdown-it-temml');
 
-md.use(mk);
+md.use(temml);
 
 // double backslash is required for javascript strings, but not html input
 var result = md.render('# Math Rulez! \n  $\\sqrt{3x-1}+(1+x)^2$');
 ```
 
-Include the KaTeX stylesheet in your html:
+Include the Temml stylesheet in your html:
 
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/temml@0.10.24/dist/Temml-Local.min.css">
 ```
 
 If you're using the default markdown-it parser, I also recommend the [github stylesheet](https://github.com/sindresorhus/github-markdown-css):
@@ -48,11 +46,13 @@ If you're using the default markdown-it parser, I also recommend the [github sty
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css"/>
 ```
 
-`KaTeX` options can be supplied with the second argument to use.
+<math><mrow href="https://temml.org/"><mstyle mathsize="1.4400em" style="color:black;"><mtext>T</mtext><mspace width="-0.2em" style="margin-left:-0.2em;"></mspace><mpadded voffset="-0.2em" style="padding:0 0 0.2em 0;"><mtext>E</mtext></mpadded><mspace width="-0.08em" style="margin-left:-0.08em;"></mspace><mrow><mtext>M</mtext><mspace width="-0.08em" style="margin-left:-0.08em;"></mspace><mpadded voffset="0.2em" style="padding:0.2em 0 0 0;"><mtext>M</mtext></mpadded><mspace width="-0.08em" style="margin-left:-0.08em;"></mspace><mtext>L</mtext></mrow></mstyle></mrow></math> options can be supplied with the second argument to use.
 
 ```javascript
-md.use(mk, {"throwOnError" : false, "errorColor" : " #cc0000"});
+md.use(temml, {"throwOnError" : false, "errorColor" : " #cc0000"});
 ```
+
+Additional options are available at [Temml's Documentation](https://temml.org/docs/en/administration#options).
 
 ## Examples
 
@@ -95,7 +95,7 @@ Math parsing in markdown is designed to agree with the conventions set by pandoc
 
 ## Math Syntax Support
 
-KaTeX is based on TeX and LaTeX. Support for both is growing. Here's a list of
-currently supported functions:
+Temml is based on TeX and LaTeX. Support for both is in constant development
+Here's a table of supported and unsupported functions:
 
-[Things that KaTeX does not (yet) support](https://github.com/KaTeX/KaTeX/wiki/Things-that-KaTeX-does-not-%28yet%29-support)
+[Temml Support Table](https://temml.org/docs/en/support_table)
