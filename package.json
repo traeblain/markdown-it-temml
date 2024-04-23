@@ -1,7 +1,7 @@
 {
-    "name": "@iktakahiro/markdown-it-katex",
-    "version": "4.0.1",
-    "description": "Fast math support for markdown-it with KaTeX",
+    "name": "@traeblain/markdown-it-temml",
+    "version": "1.0.0",
+    "description": "Fast math support for markdown-it with Temml",
     "main": "index.js",
     "scripts": {
         "watch": "watchify browser.js -o bundle.js -v",
@@ -9,10 +9,11 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+ssh://git@github.com:iktakahiro/markdown-it-katex.git"
+        "url": "git+ssh://git@github.com:traeblain/markdown-it-temml.git"
     },
     "keywords": [
         "markdown",
+        "Temml",
         "KaTeX",
         "math",
         "LaTeX",
@@ -22,7 +23,7 @@
     "author": "Takahiro Ethan Ikeuchi @iktakahiro",
     "license": "MIT",
     "dependencies": {
-        "katex": "^0.12.0"
+        "temml": "^0.10.24"
     },
     "devDependencies": {
         "markdown-it": "11.0.0",

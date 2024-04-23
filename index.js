@@ -3,14 +3,14 @@
 Like markdown-it-simplemath, this is a stripped down, simplified version of:
 https://github.com/runarberg/markdown-it-math
 
-It differs in that it takes (a subset of) LaTeX as input and relies on KaTeX
+It differs in that it takes (a subset of) LaTeX as input and relies on Temml
 for rendering output.
 */
 
 /*jslint node: true */
 'use strict';
 
-var katex = require('katex');
+var temml = require('temml');
 
 // Test if potential opening or closing delimieter
 // Assumes that there is a "$" at state.src[pos]
@@ -166,35 +166,35 @@ module.exports = function math_plugin(md, options) {
 
     options = options || {};
 
-    // set KaTeX as the renderer for markdown-it-simplemath
-    var katexInline = function(latex){
+    // set Temml as the renderer for markdown-it-simplemath
+    var temmlInline = function(latex){
         options.displayMode = false;
         try{
-            return katex.renderToString(latex, options);
+            return temml.renderToString(latex, options);
         }
         catch(error){
             if(options.throwOnError){ console.log(error); }
-            return `<span class='katex-error' title='${escapeHtml(error.toString())}'>${escapeHtml(latex)}</span>`;
+            return `<span class='temml-error' title='${escapeHtml(error.toString())}'>${escapeHtml(latex)}</span>`;
         }
     };
 
     var inlineRenderer = function(tokens, idx){
-        return katexInline(tokens[idx].content);
+        return temmlInline(tokens[idx].content);
     };
 
-    var katexBlock = function(latex){
+    var temmlBlock = function(latex){
         options.displayMode = true;
         try{
-            return "<p class='katex-block'>" + katex.renderToString(latex, options) + "</p>";
+            return "<p class='temml-block'>" + temml.renderToString(latex, options) + "</p>";
         }
         catch(error){
             if(options.throwOnError){ console.log(error); }
-            return `<p class='katex-block katex-error' title='${escapeHtml(error.toString())}'>${escapeHtml(latex)}</p>`;
+            return `<p class='temml-block temml-error' title='${escapeHtml(error.toString())}'>${escapeHtml(latex)}</p>`;
         }
     }
 
     var blockRenderer = function(tokens, idx){
-        return  katexBlock(tokens[idx].content) + '\n';
+        return  temmlBlock(tokens[idx].content) + '\n';
     }
 
     md.inline.ruler.after('escape', 'math_inline', math_inline);
