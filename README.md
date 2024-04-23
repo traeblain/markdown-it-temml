@@ -46,7 +46,7 @@ If you're using the default markdown-it parser, I also recommend the [github sty
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css"/>
 ```
 
-<math><mrow href="https://temml.org/"><mstyle mathsize="1.4400em" style="color:black;"><mtext>T</mtext><mspace width="-0.2em" style="margin-left:-0.2em;"></mspace><mpadded voffset="-0.2em" style="padding:0 0 0.2em 0;"><mtext>E</mtext></mpadded><mspace width="-0.08em" style="margin-left:-0.08em;"></mspace><mrow><mtext>M</mtext><mspace width="-0.08em" style="margin-left:-0.08em;"></mspace><mpadded voffset="0.2em" style="padding:0.2em 0 0 0;"><mtext>M</mtext></mpadded><mspace width="-0.08em" style="margin-left:-0.08em;"></mspace><mtext>L</mtext></mrow></mstyle></mrow></math> options can be supplied with the second argument to use.
+$\Large \textmd{T}\negmedspace\lower5pt{\textmd{E}}\!\textmd{M}\!\raise5pt{\textmd{M}}\!\textmd{L}$ options can be supplied with the second argument to use.
 
 ```javascript
 md.use(temml, {"throwOnError" : false, "errorColor" : " #cc0000"});
