@@ -12,7 +12,7 @@ for rendering output.
 
 var temml = require('temml');
 
-// Test if potential opening or closing delimieter
+// Test if potential opening or closing delimiter
 // Assumes that there is a "$" at state.src[pos]
 function isValidDelim(state, pos) {
     var prevChar, nextChar,
@@ -24,7 +24,7 @@ function isValidDelim(state, pos) {
     nextChar = pos + 1 <= max ? state.src.charCodeAt(pos + 1) : -1;
 
     // Check non-whitespace conditions for opening and closing, and
-    // check that closing delimeter isn't followed by a number
+    // check that closing delimiter isn't followed by a number
     if (prevChar === 0x20/* " " */ || prevChar === 0x09/* \t */ ||
             (nextChar >= 0x30/* "0" */ && nextChar <= 0x39/* "9" */)) {
         can_close = false;
@@ -51,10 +51,10 @@ function math_inline(state, silent) {
         return true;
     }
 
-    // First check for and bypass all properly escaped delimieters
+    // First check for and bypass all properly escaped delimiters
     // This loop will assume that the first leading backtick can not
     // be the first character in state.src, which is known since
-    // we have found an opening delimieter already.
+    // we have found an opening delimiter already.
     start = state.pos + 1;
     match = start;
     while ( (match = state.src.indexOf("$", match)) !== -1) {
@@ -68,7 +68,7 @@ function math_inline(state, silent) {
         match += 1;
     }
 
-    // No closing delimter found.  Consume $ and continue.
+    // No closing delimiter found.  Consume $ and continue.
     if (match === -1) {
         if (!silent) { state.pending += "$"; }
         state.pos = start;
