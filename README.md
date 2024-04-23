@@ -46,7 +46,7 @@ If you're using the default markdown-it parser, I also recommend the [github sty
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css"/>
 ```
 
-$\Large \textmd{T}\negmedspace\lower5pt{\textmd{E}}\!\textmd{M}\!\raise5pt{\textmd{M}}\!\textmd{L}$ options can be supplied with the second argument to use.
+$\Large \mathrm{T}\negthinspace\lower2pt{\mathrm{E}}\negthinspace\mathrm{M}\negthinspace\raise2pt{\mathrm{M}}\negthinspace\mathrm{L}$ options can be supplied with the second argument to use.
 
 ```javascript
 md.use(temml, {"throwOnError" : false, "errorColor" : " #cc0000"});
