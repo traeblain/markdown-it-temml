@@ -10,7 +10,7 @@ for rendering output.
 /*jslint node: true */
 'use strict';
 
-import { renderToString } from 'temml';
+let temml = require('temml');
 
 // Test if potential opening or closing delimiter
 // Assumes that there is a "$" at state.src[pos]
@@ -161,7 +161,7 @@ function escapeHtml(unsafe) {
         .replace(/'/g, "&#039;");
 }
 
-export default function math_plugin(md, options) {
+module.exports = function math_plugin(md, options) {
     // Default options
 
     options = options || {};
@@ -170,7 +170,7 @@ export default function math_plugin(md, options) {
     var temmlInline = function(latex){
         options.displayMode = false;
         try{
-            return renderToString(latex, options);
+            return temml.renderToString(latex, options);
         }
         catch(error){
             if(options.throwOnError){ console.log(error); }
@@ -185,7 +185,7 @@ export default function math_plugin(md, options) {
     var temmlBlock = function(latex){
         options.displayMode = true;
         try{
-            return "<p class='tml-block'>" + renderToString(latex, options) + "</p>";
+            return "<p class='tml-block'>" + temml.renderToString(latex, options) + "</p>";
         }
         catch(error){
             if(options.throwOnError){ console.log(error); }
