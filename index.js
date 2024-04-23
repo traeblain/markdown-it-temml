@@ -174,7 +174,7 @@ module.exports = function math_plugin(md, options) {
         }
         catch(error){
             if(options.throwOnError){ console.log(error); }
-            return `<span class='temml-error' title='${escapeHtml(error.toString())}'>${escapeHtml(latex)}</span>`;
+            return `<span class='tml-error' title='${escapeHtml(error.toString())}'>${escapeHtml(latex)}</span>`;
         }
     };
 
@@ -185,16 +185,16 @@ module.exports = function math_plugin(md, options) {
     var temmlBlock = function(latex){
         options.displayMode = true;
         try{
-            return "<p class='temml-block'>" + temml.renderToString(latex, options) + "</p>";
+            return "<p class='tml-block'>" + temml.renderToString(latex, options) + "</p>";
         }
         catch(error){
             if(options.throwOnError){ console.log(error); }
-            return `<p class='temml-block temml-error' title='${escapeHtml(error.toString())}'>${escapeHtml(latex)}</p>`;
+            return `<p class='tml-block tml-error' title='${escapeHtml(error.toString())}'>${escapeHtml(latex)}</p>`;
         }
     }
 
     var blockRenderer = function(tokens, idx){
-        return  temmlBlock(tokens[idx].content) + '\n';
+        return temmlBlock(tokens[idx].content) + '\n';
     }
 
     md.inline.ruler.after('escape', 'math_inline', math_inline);

@@ -26,8 +26,8 @@
         "temml": "^0.10.24"
     },
     "devDependencies": {
-        "markdown-it": "11.0.0",
+        "markdown-it": "^14.1.0",
         "markdown-it-testgen": "0.1.6",
-        "tape": "5.0.1"
+        "tape": "^5.7.5"
     }
 }
