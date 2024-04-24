@@ -37,15 +37,39 @@
 	<textarea id="input" type="textarea" rows=15, cols=80 spellcheck="false">
 # Maxwell's Equations
 
-
 equation | description
 ----------|------------
 $\nabla \cdot \vec{\mathbf{B}}  = 0$ | divergence of $\vec{\mathbf{B}}$ is zero
 $\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t}  = \vec{\mathbf{0}}$ |  curl of $\vec{\mathbf{E}}$ is proportional to the rate of change of $\vec{\mathbf{B}}$
 $\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} = \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} = 4 \pi \rho$ | _wha?_
 
+# More Equations
+equation | description
+----------|------------
+$G_{\mu\nu}=8\pi G\left(T_{\mu\nu}+{\large \rho}_\Lambda {\large g}_{\mu\nu} \right)$ | Einstein's Tensor 
+$(\cos \theta + i \sin \theta)^{n}=e^{in\theta}=\cos n\theta + i \sin n\theta$ | DeMoivre's Formula 
+$e^{z}=1+z+\frac{z^{2}}{2!}+\frac{z^{3}}{3!}+...+\frac{z^{n}}{n!}+...$ | Euler's Formula on Complex Numbers
+$(1+z)^{n}=1+nz+\frac{n(n-1)}{2!}z^{2}+\frac{n(n-1)(n-2)}{3!}z^{3}+...$ | more information!
+$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$ | Quadratic Equation
+$\ce{Na2SO4 ->[H2O] Na+ + SO4^2-}$ | Chemical Equation, problem with the 2- and 4.
+$\lim\limits_{x \to 0} {\frac{e^x-1}{2x}} \overset{\left[\frac{0}{0}\right]}{\underset{\mathrm{H}}{=}} \lim\limits_{x\to 0}{\frac{e^x}{2}}={\frac{1}{2}}$ | L'Hopital's Rule
+$f(x) = (x+a)(x+b) \\~~~~~~~~= x^2 + (a+b)x + ab$ | Better Alignment
+$\int\limits_{1}^{\infty} \frac{dx}{x^2} = 1.$ | Integration
+$\sum\limits_{k=1}^{\infty} \frac{1}{k^2} = \frac{\pi^2}{6}.$ | Sums
+
+$$\begin{array}{c}
+
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
+= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
+
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
+
+\nabla \cdot \vec{\mathbf{B}} & = 0
+
+\end{array}$$
+
 ![electricity](http://i.giphy.com/Gty2oDYQ1fih2.gif)</textarea>
 	<button id="button">Temml Markdown!</button>
 	<div id="output" class="markdown-body"></div>
-	<script src="./bundle.js"></script>
+	<script src="./bundled.js"></script>
 </body>

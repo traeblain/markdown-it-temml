@@ -4,7 +4,7 @@ Add Math to your Markdown
 
 [![Build Status](https://travis-ci.org/traeblain/markdown-it-temml.svg?branch=master)](https://travis-ci.org/traeblain/markdown-it-temml)
 
-[Temml](https://temml.org/) is as fast as [KaTeX](https://github.com/Khan/KaTeX) and an alternative to MathJax. This plugin makes it easy to support in your markdown.
+[Temml](https://temml.org/) is as fast as [KaTeX](https://github.com/Khan/KaTeX) and an alternative to MathJax. Temml supports additional LaTeX features that KaTeX might not support yet. This plugin makes it easy to support in your markdown.
 
 Temml works in browsers that support [MathML markup](https://caniuse.com/mathml).  This includes Chrome, Edge, Firefox, and Safari; but not Internet Explorer.
 
@@ -25,13 +25,15 @@ npm install @traeblain/markdown-it-temml
 Use it in your javascript
 
 ```javascript
-var md = require('markdown-it')(),
-    temml = require('@traeblain/markdown-it-temml');
+import markdownit from 'markdown-it'
+import tml_plugin from '@traeblain/markdown-it-temml'
 
-md.use(temml);
+const md = markdownit()
+const tml_plugin = require('@traeblain/markdown-it-temml')
+md.use(tml_plugin)
 
 // double backslash is required for javascript strings, but not html input
-var result = md.render('# Math Rulez! \n  $\\sqrt{3x-1}+(1+x)^2$');
+let result = md.render('# Math Rulez! \n  $\\sqrt{3x-1}+(1+x)^2$')
 ```
 
 Include the Temml stylesheet in your html:
@@ -49,7 +51,7 @@ If you're using the default markdown-it parser, I also recommend the [github sty
 $\Large \mathrm{T}\negthinspace\lower2pt{\mathrm{E}}\negthinspace\mathrm{M}\negthinspace\raise2pt{\mathrm{M}}\negthinspace\mathrm{L}$ options can be supplied with the second argument to use.
 
 ```javascript
-md.use(temml, {"throwOnError" : false, "errorColor" : " #cc0000"});
+md.use(tml_plugin, {"throwOnError" : false, "errorColor" : " #cc0000"});
 ```
 
 Additional options are available at [Temml's Documentation](https://temml.org/docs/en/administration#options).

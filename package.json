@@ -2,15 +2,30 @@
     "name": "@traeblain/markdown-it-temml",
     "version": "1.0.0",
     "description": "Fast math support for markdown-it with Temml",
-    "main": "index.js",
+    "main": "index.mjs",
+    "exports": {
+        ".": {
+            "require": "./dist/index.cjs.js",
+            "import": "./index.mjs"
+        },
+        "./*": {
+            "require": "./*",
+            "import": "./*"
+        }
+    },
+    "files": [
+        "index.mjs",
+        "dist/"
+    ],
     "scripts": {
-        "watch": "watchify browser.js -o bundle.js -v",
-        "test": "node test/all.js"
+        "lint": "eslint .",
+        "build": "rollup -c",
+        "watch": "rollup -c test/browser/test-rollup.config.mjs -w",
+        "old-watch": "rollup --input test/browser/test.mjs --format umd --file test/browser/bundled.js --plugin node-resolve --plugin 'terser={mangle:false, compress:false, format:{beautify:true, ascii_only:true, indent_level:2}}' --plugin 'babel={ babelHelpers:\"bundled\" }' --watch",
+        "test": "npm run lint && npm run build && node test/all.mjs",
+        "prepublishOnly": "npm run lint && npm run build"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+ssh://git@github.com:traeblain/markdown-it-temml.git"
-    },
+    "repository": "traeblain/markdown-it-temml",
     "keywords": [
         "markdown",
         "Temml",
@@ -20,14 +35,21 @@
         "markdown-it-plugin",
         "markdown-it"
     ],
-    "author": "Takahiro Ethan Ikeuchi @iktakahiro",
+    "author": "Trae Blain @traeblain",
     "license": "MIT",
+    "homepage": "https://github.com/traeblain/markdown-it-temml#readme",
     "dependencies": {
         "temml": "^0.10.24"
     },
     "devDependencies": {
+        "@rollup/plugin-babel": "^6.0.4",
+        "@rollup/plugin-node-resolve": "^15.2.3",
+        "@rollup/plugin-terser": "^0.4.4",
+        "eslint": "^8.57.0",
+        "eslint-config-standard": "^17.1.0",
         "markdown-it": "^14.1.0",
         "markdown-it-testgen": "0.1.6",
+        "rollup": "^4.16.4",
         "tape": "^5.7.5"
     }
 }
