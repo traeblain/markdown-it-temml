@@ -2,7 +2,7 @@
 
 Add Math to your Markdown
 
-[![Build Status](https://travis-ci.org/traeblain/markdown-it-temml.svg?branch=master)](https://travis-ci.org/traeblain/markdown-it-temml)
+![Build Status](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
 
 [Temml](https://temml.org/) is as fast as [KaTeX](https://github.com/Khan/KaTeX) and an alternative to MathJax. Temml supports additional LaTeX features that KaTeX might not support yet. This plugin makes it easy to support in your markdown.
 
