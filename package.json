@@ -1,6 +1,6 @@
 {
     "name": "@traeblain/markdown-it-temml",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Fast math support for markdown-it with Temml",
     "main": "index.mjs",
     "exports": {
